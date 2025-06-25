@@ -1,4 +1,6 @@
 @import url("../css/reset.css");
+@import url("../css/font.css");
+@import url("../css/variables.css");
 
 body {
     margin: 0;
