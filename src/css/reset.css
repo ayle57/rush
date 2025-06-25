@@ -1,4 +1,6 @@
 /* *** Reset CSS *** */
+@import url("./font.css");
+
 *, ::before, ::after {
     box-sizing: border-box;
     padding: 0;
