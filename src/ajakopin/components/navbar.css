@@ -11,7 +11,17 @@ nav.navbar a.navbar-brand {
 
     display: flex;
     justify-content: start;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    color: var(--black-900);
+    letter-spacing: 0.5px;
+}
+
+nav.navbar a.navbar-brand span {
+    color: var(--red);
+    font-weight: 600;
 }
 
 nav.navbar ul.navbar-links {
@@ -36,7 +46,7 @@ nav.navbar ul.navbar-links::before {
     content: "";
     position: absolute;
 
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(.17,.67,.51,.77);
 
     top: 50%;
     left: -50px;
@@ -46,8 +56,6 @@ nav.navbar ul.navbar-links::before {
     border-radius: calc(50% + (25px - 50%) * var(--active));
 
     background-color: var(--red);
-
-    z-index: 1;
 
     transform: translate(calc(var(--active) * var(--pos-x)), -50%);
 }
@@ -68,14 +76,24 @@ nav.navbar ul.navbar-links li {
 
 nav.navbar ul.navbar-links .cta {
     background-color: var(--white-grey);
-    z-index: 3;
+    z-index: 0;
+    transition: background-color 300ms;
+}
+
+nav.navbar ul.navbar-links .cta.active {
+    background-color: transparent;
 }
 
 nav.navbar ul.navbar-links li a {
     font-size: 12px;
     font-family: "Roboto", sans-serif;
+    font-weight: 600;
     color: var(--black-900);
     z-index: 2;
+}
+
+nav.navbar ul.navbar-links li.active a {
+    color: #fff;
 }
 
 nav.navbar div.navbar-cta {
@@ -88,4 +106,7 @@ nav.navbar div.navbar-cta {
 
 nav.navbar div.navbar-cta a {
     font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: var(--black-900);
+    cursor: pointer;
 }
