@@ -1,0 +1,24 @@
+div.__title {
+    padding: 5vh 0;
+}
+
+div.__title h2 {
+    position: relative;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: calc(2500vw / 1018);
+    color: var(--black-900);
+    letter-spacing: 0.25px;
+    font-weight: 600;
+    padding: 0 0 0 5vh;
+}
+
+div.__title h2::before {
+    content: '';
+    position: absolute;
+    width: 2vh;
+    height: 2vh;
+    background-color: var(--black-900);
+    left: 0;
+    bottom: calc(50% - 1vh);
+    border-radius: 50%;
+}

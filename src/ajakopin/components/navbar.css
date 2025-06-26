@@ -63,12 +63,18 @@ nav.navbar ul.navbar-links {
     display: flex;
     justify-content: space-around;
 
-    position: relative;
+    position: fixed;
+
+    width: 45%;
+
+    transform: translateX(50%);
 
     padding: 5px;
 
     background-color: #fff;
     border-radius: 25px;
+
+    z-index: 1;
 
     --pos-x: 0px;
     --active: 0;
@@ -129,10 +135,11 @@ nav.navbar ul.navbar-links li {
 nav.navbar ul.navbar-links li.cta {
     background-color: var(--white-grey);
     transition: background-color 0.2s ease-in;
+    z-index: 1;
 }
 
-nav.navbar ul.navbar-links.cta-active li.cta {
-    background-color: transparent;
+nav.navbar ul.navbar-links li.cta.active {
+    background: none !important;
 }
 
 nav.navbar ul.navbar-links li.cta.cta-transition {
@@ -160,12 +167,27 @@ nav.navbar ul.navbar-links li.active a {
     color: #fff;
 }
 
+nav.navbar ul.navbar-links::before {
+    z-index: 0;
+}
+
+nav.navbar ul.navbar-links li,
+nav.navbar ul.navbar-links li a {
+    position: relative;
+    z-index: 1;
+}
+
+nav.navbar ul.navbar-links li.cta a {
+    position: relative;
+    z-index: 2;
+}
+
 nav.navbar div.navbar-cta {
     flex: 0 0 25%;
     max-width: 25%;
 
     display: flex;
-    justify-content: center;
+    justify-content: end;
 }
 
 nav.navbar div.navbar-cta a {

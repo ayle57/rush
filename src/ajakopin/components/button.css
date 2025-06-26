@@ -1,0 +1,15 @@
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+}
+
+.btn-primary {
+    background-color: var(--red);
+    color: var(--white-100);
+}

@@ -1,8 +1,21 @@
 /* *** Import (reset, fonts, variables) *** */
 @import url("../../src/css/reset.css");
 @import url("../../src/css/variables.css");
+
+/* *** Title Component *** */
+@import url("./components/title.css");
+@import url("./components/button.css");
+
+/* *** Navbar Component *** */
 @import url("./components/navbar.css");
+/* *** Landing Component *** */
 @import url("./components/landing.css");
+/* *** About Component *** */
+@import url("./components/about.css");
+/* *** Work Component *** */
+@import url("./components/work.css");
+/* *** Services Component *** */
+@import url("./components/services.css");
 
 /* *** Normalize CSS *** */
 .section {
@@ -11,5 +24,5 @@
 }
 
 body {
-    background-color: var(--white-grey)
+    background-color: var(--white-grey);
 }
