@@ -2,38 +2,117 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pop Cat - CV</title>
+    <title>CV - Clement Morel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Partie 1 : Présentation -->
-    <section id="presentation" style="text-align:center; margin-top:2rem;">
-        <!-- Ajoute une image si tu veux -->
-        <img src= "../../public/Clement.jpg" alt="Photo de Clement" style="width:120px; border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,0.1);">        <h1>Clementine</h1>
-        <h2>Le vautour</h2>
-    </section>
-    <nav style="text-align:center; margin:1rem 0;">
-        <a href="#experience" style="margin:0 1rem;">Expérience</a>
-        <a href="#contact" style="margin:0 1rem;">Contact</a>
-    </nav> 
-    <section id="experience" style="max-width:700px; margin:2rem auto;">
-        <h3>Mes Projets</h3>
+<body data-scroll-container>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
+    <nav class="header">
+        <a href="/" class="header__logo">
+            <img src="logo.svg" alt="Home" class="header__logo-image">
+        </a>
         <ul>
-            <li><strong>Projet 1</strong> – ###</li>
-            <li><strong>Projet 2</strong> – ###</li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#experience">Expérience</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a class="header__action" href="#contact">Contact</a></li>
         </ul>
-        <h3>À propos</h3>
-        <p>Pop pop pop.</p>
+    </nav>
+
+    <div class="client">
+        <div class="client__body">
+            <div class="client__hello">Bonjour, je suis</div>
+            <div class="client__title">Clement Morel</div>
+            <div class="client__job">[Titre du poste ou spécialité]</div>
+        </div>
+        <div class="client__image">
+            <img src="../../public/Clement.jpg" alt="Photo de profil">
+        </div>
+    </div>
+
+    <section class="section light" id="about">
+        <div class="section__top-title">À propos</div>
+        <div class="section__title">Présentation</div>
+        <div class="services">
+            <div class="service">
+                <div class="service__title">Âge</div>
+                <p>[ ] ans</p>
+            </div>
+            <div class="service">
+                <div class="service__title">Adresse</div>
+                <p>[Adresse]</p>
+            </div>
+            <div class="service">
+                <div class="service__title">Email</div>
+                <p>[email@email.com]</p>
+            </div>
+        </div>
     </section>
 
-    <section id="contact" style="text-align:center; margin-bottom:2rem;">
-        <h3>Contact</h3>
-        <p>Mail : <a href="mailto:###">###</a></p>
+    <section class="section background" id="experience">
+        <div class="section__top-title">Expérience</div>
+        <div class="section__title">Parcours professionnel</div>
+        <div class="projects">
+            <div class="project">
+                <div class="project__body">
+                    <div class="project__tags">[Année - Année]</div>
+                    <a class="project__name" href="#">[Poste]</a>
+                    <p class="project__desc">[Entreprise] — [Description du poste]</p>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__body">
+                    <div class="project__tags">[Année - Année]</div>
+                    <a class="project__name" href="#">[Poste]</a>
+                    <p class="project__desc">[Entreprise] — [Description du poste]</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        Tous droits réservés.
+    <section class="section light" id="skills">
+        <div class="section__top-title">Compétences</div>
+        <div class="section__title">Techniques & humaines</div>
+        <div class="services">
+            <div class="service">
+                <div class="service__title">Langages</div>
+                <p>[ ]</p>
+            </div>
+            <div class="service">
+                <div class="service__title">Frameworks</div>
+                <p>[ ]</p>
+            </div>
+            <div class="service">
+                <div class="service__title">Soft skills</div>
+                <p>[ ]</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section social" id="contact">
+        <div class="section__top-title">Contact</div>
+        <div class="section__title">Me contacter</div>
+        <div class="social-links">
+            <a href="mailto:[email@email.com]">
+                <strong>Email</strong>
+                <span>[email@email.com]</span>
+            </a>
+            <a href="[LinkedIn]" target="_blank">
+                <strong>LinkedIn</strong>
+                <span>[linkedin.com/in/]</span>
+            </a>
+            <a href="[Github]" target="_blank">
+                <strong>Github</strong>
+                <span>[github.com/]</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        CV généré par Clement Morel — 2025
     </footer>
 </body>
 </html>
