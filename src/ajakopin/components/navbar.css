@@ -18,6 +18,7 @@ nav.navbar a.navbar-brand {
 
     color: var(--black-900);
     letter-spacing: 0.5px;
+    cursor: pointer;
 }
 
 @keyframes breathe {
@@ -71,16 +72,24 @@ nav.navbar ul.navbar-links {
 
     --pos-x: 0px;
     --active: 0;
+    --home-active: 0;
 }
+
+nav.navbar ul.navbar-links.cta-active::before {
+    transition:
+            transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+            width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+            height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+            border-radius 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 
 nav.navbar ul.navbar-links::before {
     content: "";
     position: absolute;
 
-    transition: all 0.3s cubic-bezier(.17,.67,.51,.77);
-
     top: 50%;
-    left: -40px;
+    left: 0;
 
     width: calc(20px + (calc(33.33% - 10px) - 20px) * var(--active));
     height: calc(20px + (30px - 20px) * var(--active));
@@ -88,7 +97,18 @@ nav.navbar ul.navbar-links::before {
 
     background-color: var(--red);
 
-    transform: translate(calc(var(--active) * var(--pos-x)), -50%);
+    transform:
+            translateX(calc(
+                    calc(var(--home-active) * -60px) +
+                    (1 - var(--home-active)) * (var(--pos-x) - 50%)
+            ))
+            translateY(-50%);
+
+    transition:
+            transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+            width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+            height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+            border-radius 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 nav.navbar ul.navbar-links li {
@@ -103,6 +123,7 @@ nav.navbar ul.navbar-links li {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 nav.navbar ul.navbar-links .cta {
@@ -121,6 +142,7 @@ nav.navbar ul.navbar-links li a {
     font-weight: 600;
     color: var(--black-900);
     z-index: 2;
+    text-decoration: none;
 }
 
 nav.navbar ul.navbar-links li.active a {
@@ -141,4 +163,5 @@ nav.navbar div.navbar-cta a {
     font-weight: 500;
     color: var(--black-900);
     cursor: pointer;
+    text-decoration: none;
 }
