@@ -1,39 +1,56 @@
-const navbarLinks = document.querySelector('.navbar-links');
-const home = document.querySelector('.navbar-links a.home');
-const links = document.querySelectorAll('.navbar-links__list li a');
-const indicator = document.querySelector('.active-indicator');
+const navbarLinks = document.querySelector('ul.navbar-links');
+const items = navbarLinks.querySelectorAll('li');
+const homeLink = document.querySelector('a.navbar-brand');
 
-function moveIndicatorTo(element) {
-    const navbarRect = navbarLinks.getBoundingClientRect();
-    let elemRect;
+let activeIndex = -1;
 
-    if (element === home) {
-        elemRect = home.getBoundingClientRect();
-        home.classList.add('home--active');
-    } else {
-        elemRect = element.parentElement.getBoundingClientRect();
-        home.classList.remove('home--active');
-    }
+function setPastilleToHome() {
+    items.forEach(i => i.classList.remove('active'));
+    activeIndex = -1;
 
-    const left = elemRect.left - navbarRect.left + navbarLinks.scrollLeft;
-
-    indicator.style.width = `${elemRect.width}px`;
-    indicator.style.height = `${elemRect.height}px`;
-    indicator.style.left = `${left}px`;
-    indicator.style.top = '5px';
+    navbarLinks.style.setProperty('--active', 0);
+    navbarLinks.style.setProperty('--pos-x', '0px');
 }
 
+function setPastilleToLink(index) {
+    items.forEach(i => i.classList.remove('active'));
+    items[index].classList.add('active');
 
-moveIndicatorTo(home);
+    activeIndex = index;
 
-home.addEventListener('click', e => {
+    const liRect = items[index].getBoundingClientRect();
+    const ulRect = navbarLinks.getBoundingClientRect();
+
+    const paddingLeft = 5;
+
+    const posX = liRect.left - ulRect.left + liRect.width / 2 - 10 - paddingLeft;
+
+    navbarLinks.style.setProperty('--active', 1);
+    navbarLinks.style.setProperty('--pos-x', `${posX}px`);
+}
+
+homeLink.addEventListener('click', e => {
     e.preventDefault();
-    moveIndicatorTo(home);
+
+    if (activeIndex === -1) {
+        return;
+    }
+
+    setPastilleToHome();
 });
 
-links.forEach(link => {
-    link.addEventListener('click', e => {
+items.forEach((item, index) => {
+    item.addEventListener('click', e => {
         e.preventDefault();
-        moveIndicatorTo(link);
+
+        if (activeIndex === index) {
+            setPastilleToHome();
+        } else {
+            setPastilleToLink(index);
+        }
     });
+});
+
+window.addEventListener('load', () => {
+    setPastilleToHome();
 });
