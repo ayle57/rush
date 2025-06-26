@@ -20,7 +20,7 @@ div.main-project__inner {
     position: relative;
 }
 
-div.main-project__inner div.main-project__section {
+div.main-project__inner a.main-project__section {
     flex: 0 0 50%;
     max-width: 50%;
     height: 100%;
@@ -29,13 +29,15 @@ div.main-project__inner div.main-project__section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    cursor: pointer;
 }
 
-div.main-project__inner div.main-project__section div.blur-box {
+div.main-project__inner a.main-project__section div.blur-box {
     text-align: center;
 }
 
-div.main-project__inner div.main-project__section h2 {
+div.main-project__inner a.main-project__section h2 {
     font-size: 34px;
     font-weight: 800;
     letter-spacing: 0.2px;
@@ -45,17 +47,17 @@ div.main-project__inner div.main-project__section h2 {
     line-height: 1.6;
 }
 
-div.main-project__inner div.main-project__section small {
+div.main-project__inner a.main-project__section small {
     font-size: 18px;
     letter-spacing: 1px;
     color: var(--black-900);
 }
 
-div.main-project__inner div.main-project__section.section-first {
+div.main-project__inner a.main-project__section.section-first {
     background-color: #e19129;
 }
 
-div.main-project__inner div.main-project__section.section-second {
+div.main-project__inner a.main-project__section.section-second {
     background-color: #4D9DE0;
 }
 
