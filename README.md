@@ -1,4 +1,4 @@
 # rush
 ## authors
-- Timeo Chretien
 - Allistair Jakopina
+- Timeo Chretien
