@@ -1,3 +1,6 @@
+/* =========================
+   Root Variables & Imports
+   ========================= */
 :root {
     --color-bg-dark: #18122B;
     --color-bg-mid:  #393053;
@@ -46,7 +49,10 @@ mark, audio, video {
 }
 
 body {
-    background-color: var(--color-bg-dark);
+    background: 
+        linear-gradient(rgba(24, 18, 43, 1), rgba(24, 18, 43, 0.8)), /* transparent overlay */
+        url('../../public/Shape-space.png') no-repeat center center fixed;
+    background-size: cover;
     color: var(--color-yellow);
     font-family: 'Inter', 'HK Grotesk', Arial, sans-serif;
     font-size: 16px;
@@ -76,7 +82,7 @@ img {
     100% { background-position: 30% 40%, 70% 60%; }
 }
 
-.hero {
+.person {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,11 +93,11 @@ img {
     position: relative;
     z-index: 1;
 }
-.hero__content {
+.person__content {
     max-width: 500px;
     animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) both;
 }
-.hero__title {
+.person__title {
     font-size: 3.5rem;
     font-weight: 900;
     color: var(--color-accent);
@@ -99,14 +105,14 @@ img {
     margin-bottom: 1rem;
     line-height: 1.1;
 }
-.hero__subtitle {
+.person__subtitle {
     color: var(--color-yellow);
     font-size: 1.5rem;
     font-weight: 400;
     opacity: 0.85;
     animation: fadeIn 2s 0.5s both;
 }
-.hero__image img {
+.person__image img {
     width: 200px;
     border-radius: 50%;
     box-shadow: 0 4px 24px rgba(0,0,0,0.25);
@@ -384,49 +390,10 @@ img {
         flex-direction: column;
         align-items: center;
     }
-    .hero,
+    .person,
     .client {
         flex-direction: column;
         gap: 1.5rem;
-    }
-}
-.burger-icon {
-    display: none;
-}
-
-@media (max-width: 900px) {
-    .burger-icon {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.5rem;
-        margin-left: 1rem;
-        z-index: 210;
-    }
-    .burger-bar {
-        display: block;
-        width: 28px;
-        height: 3px;
-        margin: 5px 0;
-        background: var(--color-yellow);
-        border-radius: 2px;
-        transition: 0.2s;
-    }
-    .header ul {
-        display: none;
-    }
-    .header ul.show {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        background: var(--color-bg-mid);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 0;
-        z-index: 205;
     }
 }
 @media (max-width: 600px) {
@@ -445,19 +412,19 @@ img {
         width: 100%;
         align-items: flex-start;
     }
-    .hero {
+    .person {
         flex-direction: column;
         gap: 1.2rem;
         margin: 2rem 0 1rem 0;
         min-height: unset;
     }
-    .hero__title {
+    .person__title {
         font-size: 2.1rem;
     }
-    .hero__subtitle {
+    .person__subtitle {
         font-size: 1.1rem;
     }
-    .hero__image img {
+    .person__image img {
         width: 120px;
     }
     .section {
@@ -498,5 +465,45 @@ img {
     .social-links a {
         padding: 0.7rem 1rem;
         font-size: 0.98rem;
+    }
+}
+.burger-icon {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .burger-icon {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        margin-left: 1rem;
+        z-index: 210;
+    }
+    .burger-bar {
+        display: block;
+        width: 28px;
+        height: 3px;
+        margin: 5px 0;
+        background: var(--color-yellow);
+        border-radius: 2px;
+        transition: 0.2s;
+    }
+    /* Optionally hide the main nav links on mobile */
+    .header ul {
+        display: none;
+    }
+    .header ul.show {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background: var(--color-bg-mid);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        z-index: 205;
     }
 }
