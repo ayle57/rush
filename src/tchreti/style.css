@@ -1,13 +1,26 @@
 :root {
-    --color-bg-dark: #18122B;      /* deep dark violet */
-    --color-bg-mid:  #393053;      /* muted purple */
-    --color-accent:  #7B5FEA;      /* soft purple accent */
-    --color-yellow:  #FFD966;      /* soft gold */
-
+    --color-bg-dark: #18122B;
+    --color-bg-mid:  #393053;
+    --color-accent:  #7B5FEA;
+    --color-yellow:  #FFD966;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+.section {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    filter: blur(8px);
+    transition:
+        opacity 0.8s cubic-bezier(.23,1.01,.32,1),
+        transform 0.8s cubic-bezier(.23,1.01,.32,1),
+        filter 0.8s cubic-bezier(.23,1.01,.32,1);
+}
+.section.visible {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+}
 * {
     box-sizing: border-box;
 }
@@ -44,6 +57,90 @@ body {
     line-height: 1.4;
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* Animated background */
+.animated-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 20% 30%, #7B5FEA33 0%, transparent 70%),
+                radial-gradient(circle at 80% 70%, #FFD96622 0%, transparent 70%);
+    animation: bgMove 10s infinite alternate;
+}
+@keyframes bgMove {
+    0% {
+        background-position: 20% 30%, 80% 70%;
+    }
+    100% {
+        background-position: 30% 40%, 70% 60%;
+    }
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 4rem 0 2rem 0;
+    flex-wrap: wrap;
+    min-height: 60vh;
+    position: relative;
+    z-index: 1;
+}
+.hero__content {
+    max-width: 500px;
+    animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) both;
+}
+.hero__title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--color-accent);
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+.hero__subtitle {
+    color: var(--color-yellow);
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.85;
+    animation: fadeIn 2s 0.5s both;
+}
+.hero__image img {
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    border: 5px solid var(--color-bg-mid);
+    animation: fadeIn 2s 0.8s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(.23,1.01,.32,1), transform 0.8s cubic-bezier(.23,1.01,.32,1);
+}
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .header {
@@ -59,8 +156,9 @@ body {
     flex-wrap: wrap;
 }
 .header__logo img {
-    height: 42px;
+    height: 30px;
     width: auto;
+    filter: brightness(0) invert(1);
 }
 .header ul {
     list-style: none;
@@ -171,7 +269,6 @@ body {
     max-width: 3000px;
     text-align: center;
 }
-
 .service__logo {
     display: block;
     height: 42px;
@@ -186,6 +283,7 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
 }
+
 .projects {
     display: flex;
     gap: 2rem;
@@ -260,37 +358,32 @@ img {
     max-width: 100%;
 }
 
+.section {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    filter: blur(8px);
+    transition:
+        opacity 0.8s cubic-bezier(.23,1.01,.32,1),
+        transform 0.8s cubic-bezier(.23,1.01,.32,1),
+        filter 0.8s cubic-bezier(.23,1.01,.32,1);
+}
+.section.visible {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+}
+
 @media (max-width: 900px) {
     .services, .projects, .social-links {
         flex-direction: column;
         align-items: center;
     }
-    .section {
-        padding: 1.5rem 0.5rem;
+    .hero {
+        flex-direction: column;
+        gap: 1.5rem;
     }
     .client {
         flex-direction: column;
         gap: 1.5rem;
-    }
-}
-@media (max-width: 700px) {
-    .section {
-        padding: 1.2rem 0.5rem;
-        border-radius: 10px;
-    }
-    .header {
-        padding: 1.5rem 0 1rem 0;
-        border-radius: 0 0 12px 12px;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .header ul {
-        gap: 1rem;
-    }
-    .section__title {
-        font-size: 1.4rem;
-    }
-    .client__title {
-        font-size: 2rem;
     }
 }

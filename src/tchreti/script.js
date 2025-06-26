@@ -8,4 +8,18 @@ document.addEventListener("DOMContentLoaded", function() {
             lerp: 0.08
         });
     }
+
+    const sections = document.querySelectorAll('.section');
+    const reveal = () => {
+        sections.forEach((section, i) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80) {
+                setTimeout(() => {
+                    section.classList.add('visible');
+                }, i * 120); // 120ms stagger
+            }
+        });
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
 });

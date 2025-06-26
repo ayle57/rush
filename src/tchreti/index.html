@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-scroll-container>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src="script.js"></script>
+    <div class="animated-bg"></div>
     <nav class="header">
         <a href="/" class="header__logo">
             <img src="../../public/Icon/logo.svg" alt="Home" class="header__logo-image">
@@ -22,16 +21,15 @@
         </ul>
     </nav>
 
-    <div class="client">
-        <div class="client__body">
-            <div class="client__hello">Bonjour, je suis</div>
-            <div class="client__title">Cl&eacute;ment Morel</div>
-            <div class="client__job">&Eacute;tudiant &agrave; l'&Eacute;cole 42</BR>(Travaillant QUE sur ViM)</div>
+    <section class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">Clément Morel</h1>
+            <p class="hero__subtitle">Étudiant à l'École 42<br>(Promouvant NeoVim)</p>
         </div>
-        <div class="client__image">
+        <div class="hero__image">
             <img src="../../public/Clement.jpg" alt="Photo de profil">
         </div>
-    </div>
+    </section>
 
     <section class="section light" id="about">
         <div class="section__top-title">À propos</div>
@@ -43,7 +41,7 @@
             </div>
             <div class="service">
                 <div class="service__title">Adresse</div>
-                <p>Au Bourgpalette ou Tilted Tower</p>
+                <p>Sombronce</p>
             </div>
             <div class="service">
                 <div class="service__title">Email</div>
@@ -72,22 +70,41 @@
             </div>
         </div>
     </section>
-
+<section class="section background" id="exploits">
+        <div class="section__top-title">Exploits</div>
+        <div class="section__title">Palmares & Oscar</div>
+        <div class="projects">
+            <div class="project">
+                <div class="project__body">
+                    <div class="project__tags">Stage de Seconde 2025</div>
+                    <a class="project__name" href="#">Tuteur & Trolleur</a>
+                    <p class="project__desc">Clément adore embêter les petits seconds (enfin, pas si petits que ça en y réfléchissant). Dès qu'une session reste ouverte, le petit Clément se jette sur l'occasion et détruit cette dernière.</p>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__body">
+                    <div class="project__tags">Depuis sa naissance</div>
+                    <a class="project__name" href="#">Propagandiste de NeoVim<br>(Surtout avec sa config)</a>
+                    <p class="project__desc">Le 21 décembre 2024, il créa sa propre config NeoVim, qui est franchement stylée... Bon, passons et restons tous bien évidemment sur VS Code, haha, nan mais sérieusement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="section light" id="skills">
         <div class="section__top-title">Compétences</div>
         <div class="section__title">Techniques & humaines</div>
         <div class="services">
             <div class="service">
                 <div class="service__title">Langages</div>
-                <p>[ ]</p>
+                <p>Bash<br>(Son préféré)</p>
             </div>
             <div class="service">
-                <div class="service__title">Frameworks</div>
-                <p>[ ]</p>
+                <div class="service__title">Troll</div>
+                <p>kill 1 -1<br>Changer la langue du clavier en russe<br>suprapuzzle</p>
             </div>
             <div class="service">
                 <div class="service__title">Soft skills</div>
-                <p>[ ]</p>
+                <p>Skills issues</p>
             </div>
         </div>
     </section>
@@ -96,23 +113,25 @@
         <div class="section__top-title">Contact</div>
         <div class="section__title">Me contacter</div>
         <div class="social-links">
-            <a href="mailto:[email@email.com]">
+            <a href="mailto:cmorel@student.42angouleme.fr">
                 <strong>Email</strong>
-                <span>[email@email.com]</span>
+                <span>cmorel@student.42angouleme.fr</span>
             </a>
-            <a href="[LinkedIn]" target="_blank">
+            <a href="https://linkedin.com/in/" target="_blank">
                 <strong>LinkedIn</strong>
-                <span>[linkedin.com/in/]</span>
+                <span>linkedin.com/in/</span>
             </a>
-            <a href="[Github]" target="_blank">
+            <a href="https://github.com/xrayxv9" target="_blank">
                 <strong>Github</strong>
-                <span>[github.com/]</span>
+                <span>xrayxv9</span>
             </a>
         </div>
     </section>
 
     <footer class="footer">
-        CV généré par Clement Morel — 2025
+        CV généré par Timeo Chretien — 2025
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
