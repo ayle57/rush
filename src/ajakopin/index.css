@@ -1,0 +1,80 @@
+/* *** Import (reset, fonts, variables) *** */
+@import url("../../src/css/reset.css");
+@import url("../../src/css/variables.css");
+
+/* *** Normalize CSS *** */
+.section {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+body {
+    background-color: var(--imperial-brown);
+}
+
+/* *** Landing Section *** */
+section.section.landingSection {
+    height: 90vh;
+    width: 100vw;
+}
+
+section.section.landingSection div.landingSection-inner {
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../../public/ajakopin/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+div.landingSection-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.landingSection-container div.heading-container {
+    height: 300px;
+    transform: translateY(25%);
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(92, 58, 33, 0.6);
+}
+
+div.landingSection-container div.heading-container h2 {
+    font-size: 35px;
+    color: var(--turquoise-blue);
+    font-family: var(--lora);
+    font-weight: 700;
+}
+
+div.landingSection-container div.heading-container h1 {
+    font-size: calc(7500vw / 1018);
+    font-family: var(--cinzel), serif;
+    font-weight: 800;
+    color: var(--antic-gold);
+}
+
+div.landingSection-container div.chief-container {
+    position: absolute;
+    width: 50%;
+    height: 70%;
+    bottom: 0;
+    right: 0;
+    /*backdrop-filter: blur(2px);*/
+}
+
+div.chief-container img {
+    width: auto;
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
