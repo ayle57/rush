@@ -8,18 +8,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-scroll-container>
-    <div class="animated-bg"></div>
-    <nav class="header">
-        <a href="/" class="header__logo">
-            <img src="../../public/icons/logo.svg" alt="Home" class="header__logo-image">
-        </a>
-        <ul>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#experience">Expérience</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a class="header__action" href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<div id="burgerMenu" class="burger-menu" tabindex="-1" aria-hidden="true">
+  <button class="closebtn" id="closeBurger" aria-label="Fermer le menu">&times;</button>
+  <a href="#about" class="burger-link">À propos</a>
+  <a href="#experience" class="burger-link">Expérience</a>
+  <a href="#skills" class="burger-link">Compétences</a>
+</div>
+<nav class="header">
+    <a href="/" class="header__logo">
+        <img src="../../public/icons/logo.svg" alt="Home" class="header__logo-image">
+    </a>
+    <button id="openBurger" class="burger-icon" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="burgerMenu">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+    </button>
+    <ul>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a class="header__action" href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
     <section class="hero">
         <div class="hero__content">
@@ -72,7 +82,7 @@
     </section>
 <section class="section background" id="exploits">
         <div class="section__top-title">Exploits</div>
-        <div class="section__title">Palmares & Oscar</div>
+        <div class="section__title">Palmarès & Oscars</div>
         <div class="projects">
             <div class="project">
                 <div class="project__body">
@@ -94,6 +104,14 @@
                     <a class="project__name" href="#">Projet cub3d</a>
                     <p class="project__desc">Un projet de groupe pour créer un jeu en 3D, avec des assets bien plus matures. Voici le lien vers notre projet : <a href="https://github.com/xrayxv9/cub3d">Cube3D</a></p>
             </div>
+            </div>
+            <div class="project">
+                <div class="project__body">
+                    <div class="project__tags">La bouffe</div>
+                    <a class="project__name" href="#">Mael le cuistot</a>
+                    <p class="project__desc">Les repas de Maël sont exquis<br>(Je cite "De la gastronomie culinaire")</p>
+                </div>
+            </div>
         </div>
     </section>
     <section class="section light" id="skills">
@@ -102,15 +120,16 @@
         <div class="services">
             <div class="service">
                 <div class="service__title">Langages</div>
-                <p>Bash<br>(Son préféré)</p>
+                <p>Bash<br>(Son préféré)<br>C#<br>(Je cite "Best Language of All Time")</p>
             </div>
             <div class="service">
                 <div class="service__title">Troll</div>
-                <p>kill 1 -1<br>Changer la langue du clavier en russe<br>suprapuzzle</p>
+                <p>kill 1 -1<br>Changer la langue du clavier en russe<br>suprapuzzle<br>Détruire les tweaks et les settings</p>
             </div>
             <div class="service">
                 <div class="service__title">Soft skills</div>
-                <p>Skills issues</p>
+                <p class="skills_issues"><u>Big Skills Issues</u></p>
+                <p>(Zehma, le meilleur promt qu'il a pu faire c'est "echo 'curl parrot.live' >> ~/.zshrc")</p>
             </div>
         </div>
     </section>
@@ -123,9 +142,9 @@
                 <strong>Email</strong>
                 <span>cmorel@student.42angouleme.fr</span>
             </a>
-            <a href="https://linkedin.com/in/" target="_blank">
-                <strong>LinkedIn</strong>
-                <span>linkedin.com/in/</span>
+            <a href="https://www.twitch.tv/xrayxv9" target="_blank">
+                <strong>Twitch</strong>
+                <span>xrayxv9</span>
             </a>
             <a href="https://github.com/xrayxv9" target="_blank">
                 <strong>Github</strong>
@@ -134,7 +153,7 @@
         </div>
     </section>
 
-    <footer class="footer">
+ <footer class="footer">
         CV généré par Timeo Chretien — 2025
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
