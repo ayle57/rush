@@ -7,29 +7,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-.section {
-    opacity: 0;
-    transform: translateY(40px) scale(0.98);
-    filter: blur(8px);
-    transition:
-        opacity 0.8s cubic-bezier(.23,1.01,.32,1),
-        transform 0.8s cubic-bezier(.23,1.01,.32,1),
-        filter 0.8s cubic-bezier(.23,1.01,.32,1);
-}
-.section.visible {
-    opacity: 1;
-    transform: none;
-    filter: blur(0);
-}
 * {
     box-sizing: border-box;
 }
-a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu,
+nav, output, ruby, section, summary, time,
+mark, audio, video {
+    margin: 0;
+    padding: 0;
     border: 0;
     font-size: 100%;
     font: inherit;
-    margin: 0;
-    padding: 0;
     vertical-align: baseline;
 }
 
@@ -60,8 +57,11 @@ body {
     position: relative;
     z-index: 1;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-/* Animated background */
 .animated-bg {
     position: fixed;
     inset: 0;
@@ -72,12 +72,8 @@ body {
     animation: bgMove 10s infinite alternate;
 }
 @keyframes bgMove {
-    0% {
-        background-position: 20% 30%, 80% 70%;
-    }
-    100% {
-        background-position: 30% 40%, 70% 60%;
-    }
+    0% { background-position: 20% 30%, 80% 70%; }
+    100% { background-position: 30% 40%, 70% 60%; }
 }
 
 .hero {
@@ -117,30 +113,13 @@ body {
     border: 5px solid var(--color-bg-mid);
     animation: fadeIn 2s 0.8s both;
 }
-
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-.section {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(.23,1.01,.32,1), transform 0.8s cubic-bezier(.23,1.01,.32,1);
-}
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .header {
@@ -190,6 +169,51 @@ body {
     text-decoration: none;
 }
 
+.burger-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    background: var(--color-bg-mid);
+    overflow-x: hidden;
+    transition: width 0.3s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+.burger-menu.active {
+    width: 220px;
+    pointer-events: auto;
+}
+.burger-menu a,
+.burger-menu button.closebtn {
+    padding: 14px 28px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--color-yellow);
+    display: block;
+    background: none;
+    border: none;
+    text-align: left;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.burger-menu a:hover,
+.burger-menu button.closebtn:hover {
+    background: var(--color-yellow);
+    color: var(--color-bg-dark);
+}
+.burger-menu button.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 .client {
     display: flex;
     align-items: center;
@@ -232,7 +256,19 @@ body {
     border-radius: 18px;
     box-shadow: 0 6px 32px rgba(0,0,0,0.18);
     padding: 2.5rem 2rem;
-    transition: box-shadow 0.2s;
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    filter: blur(8px);
+    transition:
+        box-shadow 0.2s,
+        opacity 0.8s cubic-bezier(.23,1.01,.32,1),
+        transform 0.8s cubic-bezier(.23,1.01,.32,1),
+        filter 0.8s cubic-bezier(.23,1.01,.32,1);
+}
+.section.visible {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
 }
 .section.light {
     background: var(--color-bg-mid);
@@ -254,7 +290,9 @@ body {
     margin-bottom: 2rem;
 }
 
-.services {
+.services,
+.projects,
+.social-links {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
@@ -262,12 +300,13 @@ body {
     font-weight: 300;
     margin-top: 40px;
 }
-.service {
+.service,
+.project {
     background: var(--color-bg-dark);
     border-radius: 12px;
     padding: 2rem 1.5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    max-width: 3000px;
+    max-width: 400px;
     text-align: center;
 }
 .service__logo {
@@ -283,21 +322,6 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 1rem;
-}
-
-.projects {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.project {
-    background: var(--color-bg-dark);
-    border-radius: 12px;
-    padding: 1.5rem 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    max-width: 400px;
-    text-align: center;
 }
 .project__image img {
     width: 100%;
@@ -322,13 +346,6 @@ body {
     font-size: 1rem;
 }
 
-.social-links {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 2rem;
-}
 .social-links a {
     background: var(--color-bg-dark);
     color: var(--color-yellow);
@@ -345,7 +362,6 @@ body {
     background: var(--color-yellow);
     color: var(--color-bg-dark);
 }
-
 .footer {
     text-align: center;
     color: var(--color-accent);
@@ -354,25 +370,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-img {
-    height: auto;
-    max-width: 100%;
-}
-
-.section {
-    opacity: 0;
-    transform: translateY(40px) scale(0.98);
-    filter: blur(8px);
-    transition:
-        opacity 0.8s cubic-bezier(.23,1.01,.32,1),
-        transform 0.8s cubic-bezier(.23,1.01,.32,1),
-        filter 0.8s cubic-bezier(.23,1.01,.32,1);
-}
-.section.visible {
-    opacity: 1;
-    transform: none;
-    filter: blur(0);
-}
 .skills_issues {
     text-align: center;
     font-size: 2rem;
@@ -381,20 +378,18 @@ img {
 }
 
 @media (max-width: 900px) {
-    .services, .projects, .social-links {
+    .services,
+    .projects,
+    .social-links {
         flex-direction: column;
         align-items: center;
     }
-    .hero {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
+    .hero,
     .client {
         flex-direction: column;
         gap: 1.5rem;
     }
 }
-
 @media (max-width: 600px) {
     body {
         font-size: 15px;
@@ -434,12 +429,15 @@ img {
         font-size: 1.3rem;
         margin-bottom: 1.2rem;
     }
-    .services, .projects, .social-links {
+    .services,
+    .projects,
+    .social-links {
         flex-direction: column;
         gap: 1rem;
         align-items: stretch;
     }
-    .service, .project {
+    .service,
+    .project {
         padding: 1rem 0.5rem;
         max-width: 100%;
     }
@@ -462,46 +460,4 @@ img {
         padding: 0.7rem 1rem;
         font-size: 0.98rem;
     }
-}
-.burger-menu {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 200;
-    top: 0;
-    left: 0;
-    background: var(--color-bg-mid);
-    overflow-x: hidden;
-    transition: width 0.3s;
-    padding-top: 60px;
-    display: flex;
-    flex-direction: column;
-    pointer-events: none;
-}
-.burger-menu.active {
-    width: 220px;
-    pointer-events: auto;
-}
-.burger-menu a, .burger-menu button.closebtn {
-    padding: 14px 28px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: var(--color-yellow);
-    display: block;
-    background: none;
-    border: none;
-    text-align: left;
-    transition: 0.2s;
-    cursor: pointer;
-}
-.burger-menu a:hover, .burger-menu button.closebtn:hover {
-    background: var(--color-yellow);
-    color: var(--color-bg-dark);
-}
-.burger-menu button.closebtn {
-    position: absolute;
-    top: 10px;
-    right: 18px;
-    font-size: 2rem;
-    cursor: pointer;
 }
