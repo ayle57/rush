@@ -10,16 +10,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const sections = document.querySelectorAll('.section');
-    const reveal = () => {
-        sections.forEach((section, i) => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 80) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
                 setTimeout(() => {
-                    section.classList.add('visible');
-                }, i * 120); // 120ms stagger
+                    entry.target.classList.add('visible');
+                }, i * 120);
+                observer.unobserve(entry.target);
             }
         });
-    };
-    window.addEventListener('scroll', reveal);
-    reveal();
+    }, {
+        threshold: 0.5
+    });
+
+    sections.forEach(section => observer.observe(section));
 });
