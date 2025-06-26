@@ -39,7 +39,7 @@ section.section.landingSection div.landingSection-inner div.landing-container h1
 section.section.landingSection div.landingSection-inner div.screen-container {
     background-color: var(--red);
     padding: 7.5vh;
-    border-radius: 25px;
+    border-radius: 35px;
 }
 
 body {
@@ -60,7 +60,7 @@ section.section.landingSection div.landingSection-inner div.screen-container div
 section.section.landingSection div.landingSection-inner div.screen-container div.scroll-container .img-container img {
     width: 100%;
     height: auto;
-    border-radius: 25px;
+    border-radius: 35px;
 }
 
 section.section.landingSection div.landingSection-inner div.screen-container div.scroll-container .img-container.img-container-front {

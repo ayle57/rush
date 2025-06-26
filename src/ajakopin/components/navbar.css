@@ -126,14 +126,25 @@ nav.navbar ul.navbar-links li {
     cursor: pointer;
 }
 
-nav.navbar ul.navbar-links .cta {
+nav.navbar ul.navbar-links li.cta {
     background-color: var(--white-grey);
-    z-index: 0;
-    transition: background-color 300ms;
+    transition: background-color 0.2s ease-in;
 }
 
-nav.navbar ul.navbar-links .cta.active {
+nav.navbar ul.navbar-links.cta-active li.cta {
     background-color: transparent;
+}
+
+nav.navbar ul.navbar-links li.cta.cta-transition {
+    transition-delay: 0s;
+}
+
+nav.navbar ul.navbar-links.cta-active::before {
+    transition:
+            transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+            width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+            height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+            border-radius 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 nav.navbar ul.navbar-links li a {

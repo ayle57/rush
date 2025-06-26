@@ -5,20 +5,15 @@ const homeLink = document.querySelector('a.navbar-brand');
 let activeIndex = -1;
 let animationInProgress = false;
 
-function setPastilleToLink(index) {
+function setPastilleToHome() {
+    if (animationInProgress) return;
+
     items.forEach(i => i.classList.remove('active'));
-    items[index].classList.add('active');
-    activeIndex = index;
-
-    const item = items[index];
-    const itemRect = item.getBoundingClientRect();
-    const navbarRect = navbarLinks.getBoundingClientRect();
-
-    const centerX = itemRect.left - navbarRect.left + itemRect.width / 2;
-
-    navbarLinks.style.setProperty('--active', '1');
-    navbarLinks.style.setProperty('--pos-x', `${centerX}px`);
-    navbarLinks.style.setProperty('--home-active', '0');
+    activeIndex = -1;
+    navbarLinks.style.setProperty('--home-active', '1');
+    navbarLinks.style.setProperty('--active', '0');
+    navbarLinks.style.setProperty('--pos-x', '0px');
+    navbarLinks.classList.remove('cta-active');
 }
 
 function animatePastilleBetweenLinks(newIndex) {
@@ -29,22 +24,21 @@ function animatePastilleBetweenLinks(newIndex) {
     const currentIndex = activeIndex;
     const navbarRect = navbarLinks.getBoundingClientRect();
 
+    const newItem = items[newIndex];
+    const isCta = newItem.classList.contains('cta');
+
     let startX, endX;
 
-    const isCta = items[newIndex].classList.contains('cta');
-
     if (currentIndex < 0) {
-        const newRect = items[newIndex].getBoundingClientRect();
+        const newRect = newItem.getBoundingClientRect();
         endX = newRect.left - navbarRect.left + newRect.width / 2;
-
-        navbarLinks.classList.remove('cta-active');
 
         navbarLinks.style.setProperty('--pos-x', `${endX}px`);
         navbarLinks.style.setProperty('--active', '1');
         navbarLinks.style.setProperty('--home-active', '0');
 
         items.forEach(i => i.classList.remove('active'));
-        items[newIndex].classList.add('active');
+        newItem.classList.add('active');
         activeIndex = newIndex;
 
         animationInProgress = false;
@@ -53,12 +47,18 @@ function animatePastilleBetweenLinks(newIndex) {
     }
 
     const currentRect = items[currentIndex].getBoundingClientRect();
-    const newRect = items[newIndex].getBoundingClientRect();
+    const newRect = newItem.getBoundingClientRect();
 
     startX = currentRect.left - navbarRect.left + currentRect.width / 2;
     endX = newRect.left - navbarRect.left + newRect.width / 2;
 
-    if (!isCta) {
+    if (isCta) {
+        navbarLinks.classList.add('cta-active');
+        newItem.classList.add('cta-transition');
+        setTimeout(() => {
+            newItem.classList.remove('cta-transition');
+        }, 200);
+    } else {
         navbarLinks.classList.remove('cta-active');
     }
 
@@ -67,50 +67,30 @@ function animatePastilleBetweenLinks(newIndex) {
     navbarLinks.style.setProperty('--active', '0');
 
     requestAnimationFrame(() => {
-        if (isCta) {
-            navbarLinks.classList.add('cta-active');
-        }
-
-        navbarLinks.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), width 0.5s cubic-bezier(0.22, 1, 0.36, 1), height 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-radius 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
+        navbarLinks.style.transition = 'transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), width 0.35s cubic-bezier(0.22, 1, 0.36, 1), height 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-radius 0.35s cubic-bezier(0.22, 1, 0.36, 1)';
         navbarLinks.style.setProperty('--pos-x', `${endX}px`);
         navbarLinks.style.setProperty('--active', '1');
 
         items.forEach(i => i.classList.remove('active'));
-        items[newIndex].classList.add('active');
+        newItem.classList.add('active');
         activeIndex = newIndex;
 
         setTimeout(() => {
             animationInProgress = false;
             navbarLinks.classList.remove('moving');
-        }, 500);
+        }, 350);
     });
-}
-
-function setPastilleToHome() {
-    if (animationInProgress) return;
-
-    items.forEach(i => i.classList.remove('active'));
-    activeIndex = -1;
-    navbarLinks.style.setProperty('--home-active', '1');
-    navbarLinks.style.setProperty('--active', '0');
-    navbarLinks.style.setProperty('--pos-x', '0px');
 }
 
 
 homeLink.addEventListener('click', e => {
     e.preventDefault();
-
-    if (activeIndex === -1) {
-        return;
-    }
-
-    setPastilleToHome();
+    if (activeIndex !== -1) setPastilleToHome();
 });
 
 items.forEach((item, index) => {
     item.addEventListener('click', e => {
         e.preventDefault();
-
         if (activeIndex === index) {
             setPastilleToHome();
         } else {
@@ -125,6 +105,8 @@ window.addEventListener('load', () => {
 
 window.addEventListener('resize', () => {
     if (activeIndex >= 0) {
-        setPastilleToLink(activeIndex);
+        const evt = new Event('click');
+        items[activeIndex].dispatchEvent(evt);
     }
 });
+
