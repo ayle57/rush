@@ -32,6 +32,42 @@ section.section.landingSection div.landingSection-inner div.landing-container h1
     height: 2.5vh;
     background-color: var(--red);
     right: -4vw;
-    top: calc(50% - 2.5vh);
+    bottom: 0;
     border-radius: 50%;
+}
+
+section.section.landingSection div.landingSection-inner div.screen-container {
+    background-color: var(--red);
+    padding: 7.5vh;
+    border-radius: 25px;
+}
+
+body {
+    height: 1000vh;
+}
+
+section.section.landingSection div.landingSection-inner div.screen-container div.scroll-container {
+    width: 100%;
+    height: auto;
+    min-height: 70vh;
+    position: relative;
+}
+
+section.section.landingSection div.landingSection-inner div.screen-container div.scroll-container .img-container {
+    position: absolute;
+}
+
+section.section.landingSection div.landingSection-inner div.screen-container div.scroll-container .img-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+
+section.section.landingSection div.landingSection-inner div.screen-container div.scroll-container .img-container.img-container-front {
+    top: 0;
+    transform: scale(0.95);
+}
+
+section.section.landingSection div.landingSection-inner div.screen-container div.scroll-container .img-container.img-container-back {
+    top: 0;
 }
