@@ -9,72 +9,150 @@
 }
 
 body {
-    background-color: var(--imperial-brown);
+    background-color: var(--white-grey)
+}
+
+/* *** Navbar Component *** */
+header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 5vw;
+}
+
+header.navbar div.navbar-brand {
+    flex: 0 0 20%;
+    max-width: 20%;
+
+    display: flex;
+    justify-content: center;
+}
+
+header.navbar a.navbar-brand {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    position: relative;
+
+    color: var(--black-900);
+
+    display: flex;
+    cursor: pointer;
+}
+
+header.navbar a.navbar-brand::before {
+    content: '';
+    display: block;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    background-color: var(--black-900);
+    border-radius: 50%;
+}
+
+header.navbar div.navbar-links {
+    position: relative;
+    flex: 0 0 35%;
+    max-width: 35%;
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+
+header.navbar div.navbar-links a.home {
+    width: 20px;
+    height: 18px;
+    display: inline-flex;
+    background-color: var(--red);
+    transition: background-color 0.3s ease;
+    border-radius: 50%;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+}
+
+header.navbar div.navbar-links a.home:not(.home--active) {
+    background-color: transparent;
+}
+
+header.navbar div.navbar-links ul.navbar-links__list {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    background-color: var(--white-100);
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    z-index: 2;
+}
+
+header.navbar div.navbar-links ul.navbar-links__list li {
+    background: none;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(33.33% - 5px);
+    height: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+header.navbar div.navbar-links ul.navbar-links__list li.active {
+    background-color: var(--red);
+}
+
+header.navbar div.navbar-links ul.navbar-links__list .grey {
+    background-color: var(--white-grey);
+}
+
+header.navbar div.navbar-links ul.navbar-links__list li a {
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: var(--black-900);
+    cursor: pointer;
+    z-index: 3;
+    position: relative;
+}
+
+header.navbar div.navbar-cta {
+    flex: 0 0 20%;
+    max-width: 20%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.active-indicator {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 20px;
+    height: 18px;
+    background-color: var(--red);
+    border-radius: 25px;
+    transition: left 0.3s ease, width 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.active-text {
+    color: white !important;
 }
 
 /* *** Landing Section *** */
 section.section.landingSection {
-    height: 90vh;
-    width: 100vw;
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 60%;
 }
 
 section.section.landingSection div.landingSection-inner {
     width: 100%;
     height: 100%;
-
-    background-image: url("../../public/ajakopin/background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 
-div.landingSection-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-}
-
-div.landingSection-container div.heading-container {
-    height: 300px;
-    transform: translateY(25%);
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(92, 58, 33, 0.6);
-}
-
-div.landingSection-container div.heading-container h2 {
-    font-size: 35px;
-    color: var(--turquoise-blue);
-    font-family: var(--lora);
-    font-weight: 700;
-}
-
-div.landingSection-container div.heading-container h1 {
-    font-size: calc(7500vw / 1018);
-    font-family: var(--cinzel), serif;
-    font-weight: 800;
-    color: var(--antic-gold);
-}
-
-div.landingSection-container div.chief-container {
-    position: absolute;
-    width: 50%;
-    height: 70%;
-    bottom: 0;
-    right: 0;
-    /*backdrop-filter: blur(2px);*/
-}
-
-div.chief-container img {
-    width: auto;
-    height: 100%;
-    position: absolute;
-    right: 0;
-}

@@ -1,19 +1,14 @@
 :root {
-    --black-100: #0a0a0a;
+    --black-100: rgba(10, 10, 10, 0.05);
     --black-900: #171717;
     --white-500: #f3f3f3;
     --white-900: #e5e5e5;
     --white-100: #f6f6f6;
 
-    --imperial-brown: #5c3a21;
-    --antic-gold: #eec33a;
-    --hollow-black: #1c1c1c;
-    --light-ivoir: #f8f4e3;
-    --turquoise-blue: #02b4b4;
+    --white-grey: #d9e0ef;
+
+    --red: #ff4848;
 
     --font-family: "Montserrat";
     --font-size: 14px;
-
-    --cinzel: "Cinzel Decorative";
-    --lora: "Lora";
 }
