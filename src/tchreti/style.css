@@ -168,9 +168,10 @@ body {
     border-radius: 12px;
     padding: 2rem 1.5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    max-width: 260px;
+    max-width: 3000px;
     text-align: center;
 }
+
 .service__logo {
     display: block;
     height: 42px;
@@ -185,7 +186,6 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
 }
-
 .projects {
     display: flex;
     gap: 2rem;
@@ -197,7 +197,7 @@ body {
     border-radius: 12px;
     padding: 1.5rem 1rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    max-width: 260px;
+    max-width: 400px;
     text-align: center;
 }
 .project__image img {

@@ -50,7 +50,7 @@ div.main-project__inner a.main-project__section h2 {
     font-weight: 800;
     letter-spacing: 0.2px;
 
-    color: var(--black-100);
+    color: var(--black-900);
 
     line-height: 1.6;
 }
@@ -74,7 +74,7 @@ div.main-project__inner .center-box {
     justify-content: center;
     align-items: center;
     position: absolute;
-    color: var(--black-100);
+    color: var(--black-900);
 
     --size: 150px;
 
