@@ -2,48 +2,47 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>CV - Clement Morel</title>
+    <title>CV - Clément Morel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts & Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-scroll-container>
-<div id="burgerMenu" class="burger-menu" tabindex="-1" aria-hidden="true">
-  <button class="closebtn" id="closeBurger" aria-label="Fermer le menu">&times;</button>
-  <a href="#about" class="burger-link">À propos</a>
-  <a href="#experience" class="burger-link">Expérience</a>
-  <a href="#skills" class="burger-link">Compétences</a>
-</div>
-<nav class="header">
-    <a href="/" class="header__logo">
-        <img src="../../public/icons/logo.svg" alt="Home" class="header__logo-image">
-    </a>
-    <button id="openBurger" class="burger-icon" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="burgerMenu">
-        <span class="burger-bar"></span>
-        <span class="burger-bar"></span>
-        <span class="burger-bar"></span>
-    </button>
-    <ul>
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#experience">Expérience</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a class="header__action" href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
+    <nav id="burgerMenu" class="burger-menu" tabindex="-1" aria-hidden="true">
+        <button class="closebtn" id="closeBurger" aria-label="Fermer le menu">&times;</button>
+        <a href="#about" class="burger-link">À propos</a>
+        <a href="#experience" class="burger-link">Expérience</a>
+        <a href="#skills" class="burger-link">Compétences</a>
+    </nav>
+    <header class="header">
+        <a href="/" class="header__logo" aria-label="Accueil">
+            <img src="../../public/icons/logo.svg" alt="Logo Clément Morel" class="header__logo-image">
+        </a>
+        <button id="openBurger" class="burger-icon" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="burgerMenu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+        </button>
+        <ul>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#experience">Expérience</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a class="header__action" href="#contact">Contact</a></li>
+        </ul>
+    </header>
     <section class="hero">
         <div class="hero__content">
             <h1 class="hero__title">Clément Morel</h1>
-            <p class="hero__subtitle">Étudiant à l'École 42<br>(Promouvant NeoVim)</p>
+            <p class="hero__subtitle">Étudiant à l'École 42<br><span class="hero__subtitle--note">(Promouvant NeoVim)</span></p>
         </div>
         <div class="hero__image">
-            <img src="../../public/Clement.jpg" alt="Photo de profil">
+            <img src="../../public/Clement.jpg" alt="Photo de Clément Morel">
         </div>
     </section>
-
     <section class="section light" id="about">
         <div class="section__top-title">À propos</div>
-        <div class="section__title">Présentation</div>
+        <h2 class="section__title">Présentation</h2>
         <div class="services">
             <div class="service">
                 <div class="service__title">Âge</div>
@@ -59,64 +58,82 @@
             </div>
         </div>
     </section>
-
     <section class="section background" id="experience">
         <div class="section__top-title">Expérience</div>
-        <div class="section__title">Parcours professionnel</div>
+        <h2 class="section__title">Parcours professionnel</h2>
         <div class="projects">
             <div class="project">
                 <div class="project__body">
                     <div class="project__tags">Depuis sa jeunesse</div>
                     <a class="project__name" href="#">Footballeur professionnel</a>
-                    <p class="project__desc">Clément adore le foot, il en joue depuis qu'il était encore plus petit que sa taille actuelle. Sa dernière prouesse est d'être ressorti victorieux de son match contre d'anciens lycéens du lycée Saint-Paul.</p>
+                    <p class="project__desc">
+                        Clément adore le foot, il en joue depuis qu'il était encore plus petit que sa taille actuelle.
+                        Sa dernière prouesse est d'être ressorti victorieux de son match contre d'anciens lycéens du lycée Saint-Paul.
+                    </p>
                 </div>
             </div>
             <div class="project">
                 <div class="project__body">
                     <div class="project__tags">09/07/2024 - Maintenant</div>
                     <a class="project__name" href="#">Étudiant à l'École 42</a>
-                    <p class="project__desc">Cela fait presque 1 an qu'il travaille rigoureusement ici, à l'École 42. Il est souvent persécuté par son supérieur Eliott et agit comme un vautour envers les piscineux, mais reste très sympa quand même.</p>
+                    <p class="project__desc">
+                        Cela fait presque 1 an qu'il travaille rigoureusement ici, à l'École 42.
+                        Il est souvent persécuté par son supérieur Eliott et agit comme un vautour envers les piscineux, mais reste très sympa quand même.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-<section class="section background" id="exploits">
+    <section class="section background" id="exploits">
         <div class="section__top-title">Exploits</div>
-        <div class="section__title">Palmarès & Oscars</div>
+        <h2 class="section__title">Palmarès & Oscars</h2>
         <div class="projects">
             <div class="project">
                 <div class="project__body">
                     <div class="project__tags">Stage de Seconde 2025</div>
                     <a class="project__name" href="#">Tuteur & Trolleur</a>
-                    <p class="project__desc">Clément adore embêter les petits seconds (enfin, pas si petits que ça en y réfléchissant). Dès qu'une session reste ouverte, le petit Clément se jette sur l'occasion et détruit cette dernière.</p>
+                    <p class="project__desc">
+                        Clément adore embêter les petits seconds (enfin, pas si petits que ça en y réfléchissant).
+                        Dès qu'une session reste ouverte, le petit Clément se jette sur l'occasion et détruit cette dernière.
+                    </p>
                 </div>
             </div>
             <div class="project">
                 <div class="project__body">
                     <div class="project__tags">Depuis sa naissance</div>
                     <a class="project__name" href="#">Propagandiste de NeoVim<br>(Surtout avec sa config)</a>
-                    <p class="project__desc">Le 21 décembre 2024, il créa sa propre config NeoVim, qui est franchement stylée... Bon, passons et restons tous bien évidemment sur VS Code, haha, nan mais sérieusement.</p>
+                    <p class="project__desc">
+                        Le 21 décembre 2024, il créa sa propre config NeoVim, qui est franchement stylée...
+                        Bon, passons et restons tous bien évidemment sur VS Code, haha, nan mais sérieusement.
+                    </p>
                 </div>
             </div>
-             <div class="project">
+            <div class="project">
                 <div class="project__body">
-                    <div class="project__tags">Debut de creation : 12 Mai 2025</div>
+                    <div class="project__tags">Début de création : 12 Mai 2025</div>
                     <a class="project__name" href="#">Projet cub3d</a>
-                    <p class="project__desc">Un projet de groupe pour créer un jeu en 3D, avec des assets bien plus matures. Voici le lien vers notre projet : <a href="https://github.com/xrayxv9/cub3d">Cube3D</a></p>
-            </div>
+                    <p class="project__desc">
+                        Un projet de groupe pour créer un jeu en 3D, avec des assets bien plus matures.
+                        Voici le lien vers notre projet :
+                        <a href="https://github.com/xrayxv9/cub3d" target="_blank" rel="noopener">Cube3D</a>
+                    </p>
+                </div>
             </div>
             <div class="project">
                 <div class="project__body">
                     <div class="project__tags">La bouffe</div>
                     <a class="project__name" href="#">Mael le cuistot</a>
-                    <p class="project__desc">Les repas de Maël sont exquis<br>(Je cite "De la gastronomie culinaire")</p>
+                    <p class="project__desc">
+                        Les repas de Maël sont exquis<br>
+                        <em>(Je cite "De la gastronomie culinaire")</em>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
     <section class="section light" id="skills">
         <div class="section__top-title">Compétences</div>
-        <div class="section__title">Techniques & humaines</div>
+        <h2 class="section__title">Techniques & humaines</h2>
         <div class="services">
             <div class="service">
                 <div class="service__title">Langages</div>
@@ -124,36 +141,43 @@
             </div>
             <div class="service">
                 <div class="service__title">Troll</div>
-                <p>kill 1 -1<br>Changer la langue du clavier en russe<br>suprapuzzle<br>Détruire les tweaks et les settings</p>
+                <p>
+                    kill 1 -1<br>
+                    Changer la langue du clavier en russe<br>
+                    suprapuzzle<br>
+                    Détruire les tweaks et les settings
+                </p>
             </div>
             <div class="service">
                 <div class="service__title">Soft skills</div>
                 <p class="skills_issues"><u>Big Skills Issues</u></p>
-                <p>(Zehma, le meilleur promt qu'il a pu faire c'est "echo 'curl parrot.live' >> ~/.zshrc")</p>
+                <p>
+                    (Zehma, le meilleur prompt qu'il a pu faire c'est
+                    <code>echo 'curl parrot.live' &gt;&gt; ~/.zshrc</code>)
+                </p>
             </div>
         </div>
     </section>
-
     <section class="section social" id="contact">
         <div class="section__top-title">Contact</div>
-        <div class="section__title">Me contacter</div>
+        <h2 class="section__title">Me contacter</h2>
         <div class="social-links">
             <a href="mailto:cmorel@student.42angouleme.fr">
                 <strong>Email</strong>
                 <span>cmorel@student.42angouleme.fr</span>
             </a>
-            <a href="https://www.twitch.tv/xrayxv9" target="_blank">
+            <a href="https://www.twitch.tv/xrayxv9" target="_blank" rel="noopener">
                 <strong>Twitch</strong>
                 <span>xrayxv9</span>
             </a>
-            <a href="https://github.com/xrayxv9" target="_blank">
+            <a href="https://github.com/xrayxv9" target="_blank" rel="noopener">
                 <strong>Github</strong>
                 <span>xrayxv9</span>
             </a>
         </div>
     </section>
 
- <footer class="footer">
+    <footer class="footer">
         CV généré par Timeo Chretien — 2025
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
