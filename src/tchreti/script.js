@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
         new LocomotiveScroll({
             el: container,
             smooth: true,
-            multiplier: 0.6,
-            lerp: 0.08
+            multiplier: 0.15,
+            lerp: 0.09
         });
     }
 
@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     sections.forEach(section => observer.observe(section));
 
-    // Burger menu logic with null checks
     var burgerMenu = document.getElementById("burgerMenu");
     var openBurger = document.getElementById("openBurger");
     var closeBurger = document.getElementById("closeBurger");

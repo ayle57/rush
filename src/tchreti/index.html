@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <title>CV - Clément Morel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Fonts & Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body data-scroll-container>
+<body>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="script.js"></script>
-    <div class="bg-overlay"></div>
-    <nav id="burgerMenu" class="burger-menu" tabindex="-1" aria-hidden="true">
-        <button class="closebtn" id="closeBurger" aria-label="Fermer le menu">&times;</button>
-        <a href="#about" class="burger-link">À propos</a>
-        <a href="#experience" class="burger-link">Expérience</a>
-        <a href="#exploits" class="burger-link">Exploits</a>
-        <a href="#skills" class="burger-link">Compétences</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div data-scroll-container>
+        <div class="bg-overlay"></div>
+        <nav id="burgerMenu" class="burger-menu" tabindex="-1" aria-hidden="true">
+            <button class="closebtn" id="closeBurger" aria-label="Fermer le menu">&times;</button>
+            <a href="#about" class="burger-link">À propos</a>
+            <a href="#experience" class="burger-link">Expérience</a>
+            <a href="#exploits" class="burger-link">Exploits</a>
+            <a href="#skills" class="burger-link">Compétences</a>
+            <a href="#contact">Contact</a>
+        </nav>
     <header class="header">
         <a href="/" class="header__logo" aria-label="Accueil">
             <img src="../../public/icons/house.svg" alt="Icone House" class="header__logo-image">
@@ -37,6 +37,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
+    <main>
 <section class="person">
         <div class="person__content">
             <h1 class="person__title">Clément Morel</h1>
@@ -211,7 +212,9 @@
             </a>
         </div>
     </section>
-  <footer class="footer">
+    </main>
+    </div>
+    <footer class="footer">
         CV produit, imaginé, conçu, polis, réglementé par Timéo Chrétien, avec grand soin de bien taclé Clément (alias FuzeIII) — 2025
     </footer>
 </body>
