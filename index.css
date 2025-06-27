@@ -4,32 +4,38 @@
 main.main-project {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Remove flex centering here */
     background: #f7f7fb;
     max-height: 100vh;
+    /* Remove display, align-items, justify-content */
 }
 
 div.space-shape {
-  min-height: 100vh;
-  height: 100vh;
-  background:
-    linear-gradient(rgba(31,34,53,0.7), rgba(31,34,53,0.7)),
-    url('public/icons/space-shape.png') no-repeat center center;
-  background-size: cover;
-  color: #fff;
-  position: relative;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    background:
+        linear-gradient(rgba(31,34,53,0.7), rgba(31,34,53,0.7)),
+        url('./public/space-shape.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    display: flex; /* Add flex centering here */
+    align-items: center;
+    justify-content: center;
 }
 
 div.main-project__inner {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 48px;
+    gap: 280px;
     position: relative;
     width: 100%;
-    max-width: 900px;
+    height: 100%;
+    max-width: 1600px;
+    max-height: 1600px;
+    padding: 2vh 2vw;
 }
 
 a.main-project__section {
@@ -66,7 +72,7 @@ a.section-second {
 }
 
 a.main-project__section:hover {
-    transform: scale(1.045) translateY(-6px);
+    transform: scale(1.2) translateY(-6px);
     box-shadow: 0 8px 32px 0 rgba(123,95,234,0.13);
     z-index: 2;
 }
@@ -121,46 +127,6 @@ a.main-project__section small {
     margin: 0;
     letter-spacing: 1px;
 }
-div.main-project__inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-}
-
-@media (min-width: 901px) {
-    a.section-first {
-        margin-right: 60px;
-        height: auto;
-    }
-    a.section-second {
-        margin-left: 60px;
-        height: auto;
-    }
-}
-@media (max-width: 900px) {
-    div.main-project__inner {
-        flex-direction: column;
-        gap: 32px;
-        max-width: 95vw;
-    }
-    a.main-project__section {
-        max-width: 100%;
-        width: 90vw;
-        height: 120px;
-        border-radius: 32px !important;
-    }
-    .center-box {
-        position: static;
-        transform: none;
-        margin: 1.5rem auto;
-        left: unset;
-        top: unset;
-    }
-}
 
 @media (min-width: 901px) {
     div.main-project__inner {
@@ -177,5 +143,27 @@ div.main-project__inner {
     .center-box {
         width: 120px;
         height: 120px;
+    }
+}
+
+@media (max-width: 900px) {
+    div.main-project__inner {
+        flex-direction: column;
+        gap: 30px;
+        max-width: 95vw;
+        padding: 2.5vh 2.5vw;
+    }
+    a.main-project__section {
+        max-width: 100%;
+        width: 90vw;
+        height: 120px;
+        border-radius: 32px !important;
+    }
+    .center-box {
+        position: static;
+        transform: none;
+        margin: 1.5rem auto;
+        left: unset;
+        top: unset;
     }
 }
