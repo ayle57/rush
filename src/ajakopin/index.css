@@ -1,24 +1,24 @@
 /* *** Import (reset, fonts, variables) *** */
-@import url("../../src/css/reset.css");
-@import url("../../src/css/variables.css");
+@import url("../shared/reset.css");
+@import url("../shared/variables.css");
 
-/* *** Title Component *** */
+/* *** Basic Components *** */
 @import url("./components/title.css");
 @import url("./components/button.css");
 
-/* *** Navbar Component *** */
+/* *** Navbar Section *** */
 @import url("./components/navbar.css");
-/* *** Landing Component *** */
+/* *** Landing Section *** */
 @import url("./components/landing.css");
-/* *** About Component *** */
+/* *** About Section *** */
 @import url("./components/about.css");
-/* *** Work Component *** */
+/* *** Work Section *** */
 @import url("./components/work.css");
-/* *** Services Component *** */
+/* *** Services Section *** */
 @import url("./components/services.css");
-/* *** Contact Component *** */
+/* *** Contact Section *** */
 @import url("./components/contact.css");
-/* *** Footer Component *** */
+/* *** Footer Section *** */
 @import url("./components/footer.css");
 
 /* *** Normalize CSS *** */

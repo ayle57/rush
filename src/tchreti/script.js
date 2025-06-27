@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     sections.forEach(section => observer.observe(section));
 
-    var burgerMenu = document.getElementById("burgerMenu");
-    var openBurger = document.getElementById("openBurger");
-    var closeBurger = document.getElementById("closeBurger");
-    var burgerLinks = document.querySelectorAll('.burger-link');
+    let burgerMenu = document.getElementById("burgerMenu");
+    let openBurger = document.getElementById("openBurger");
+    let closeBurger = document.getElementById("closeBurger");
+    let burgerLinks = document.querySelectorAll('.burger-link');
 
     if (openBurger && closeBurger && burgerMenu) {
         openBurger.onclick = function() {

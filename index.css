@@ -1,5 +1,5 @@
-@import url("./src/css/variables.css");
-@import url("./src/css/reset.css");
+@import url("src/shared/variables.css");
+@import url("src/shared/reset.css");
 
 main.main-project {
     width: 100vw;
