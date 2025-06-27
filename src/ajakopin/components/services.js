@@ -5,7 +5,18 @@ const items = document.querySelectorAll('.service-item');
 const viewportWidth = window.innerWidth;
 const containerScrollWidth = container.scrollWidth;
 const scrollableDistance = containerScrollWidth - viewportWidth;
-const scrollMultiplier = 1.8;
+
+function getScrollMultiplier() {
+    const viewportWidth = window.innerWidth;
+
+    if (viewportWidth >= 1440) return 2;
+    if (viewportWidth >= 1024) return 1.4;
+    if (viewportWidth >= 768) return 1.2;
+    if (viewportWidth >= 420) return 0.8;
+    return 1.0;
+}
+
+let scrollMultiplier = getScrollMultiplier();
 
 section.style.height = (scrollableDistance * scrollMultiplier + window.innerHeight) + 'px';
 

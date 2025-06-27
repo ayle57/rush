@@ -46,7 +46,7 @@
 
 
 .service-item {
-    min-width: 300px;
+    min-width: 200px;
     height: auto;
     border-radius: 12px;
     display: flex;
@@ -59,8 +59,8 @@
 }
 
 .service-item img {
-    width: 20vw;
-    height: 20vw;
+    width: 10vw;
+    height: 10vw;
     object-fit: contain;
     margin-bottom: 25px;
 }
@@ -73,5 +73,5 @@
 }
 
 .afterSection {
-    padding: 100vh 2rem 5rem;
+    padding: 50vh 2rem 5rem;
 }
