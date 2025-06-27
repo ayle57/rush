@@ -10,3 +10,7 @@ section.section.aboutSection div.aboutSection-inner div.aboutSection-container p
     line-height: 1.8;
     margin-bottom: 20px;
 }
+
+section.section.aboutSection div.aboutSection-inner div.aboutSection-container a {
+    margin-top: 10px;
+}

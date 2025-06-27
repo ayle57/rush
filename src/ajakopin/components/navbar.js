@@ -5,6 +5,78 @@ const homeLink = document.querySelector('a.navbar-brand');
 let activeIndex = -1;
 let animationInProgress = false;
 
+const sectionMap = [
+    { id: 'home', navIndex: -1 },
+    { id: 'work', navIndex: 0 },
+    { id: 'services-trigger', navIndex: 1 },
+    { id: 'contact', navIndex: 2 }
+];
+
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5
+};
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const targetId = entry.target.id;
+        const isServicesTrigger = entry.target.classList.contains('servicesSection-trigger');
+
+        if (entry.isIntersecting) {
+            const match = sectionMap.find(section =>
+                (section.id === 'services-trigger' && isServicesTrigger) ||
+                (section.id === targetId)
+            );
+
+            if (match) {
+                if (match.navIndex === -1) {
+                    setPastilleToHome();
+                } else if (activeIndex !== match.navIndex) {
+                    animatePastilleBetweenLinks(match.navIndex);
+                }
+            }
+        }
+    });
+}, observerOptions);
+
+// Observer les vraies sections visibles
+sectionMap.forEach(section => {
+    const el = section.id === 'services-trigger'
+        ? document.querySelector('.servicesSection-trigger')
+        : document.getElementById(section.id);
+
+    if (el) {
+        sectionObserver.observe(el);
+    }
+});
+
+let autoScrolling = false;
+
+items.forEach((item, index) => {
+    item.addEventListener('click', e => {
+        e.preventDefault();
+
+        const targetSection = sectionMap.find(s => s.navIndex === index);
+        if (targetSection) {
+            const sectionEl = document.getElementById(targetSection.id === 'services-trigger' ? 'services' : targetSection.id);
+            if (sectionEl) {
+                const yOffset = -60;
+                const y = sectionEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+        }
+
+        if (activeIndex === index) {
+            setPastilleToHome();
+        } else {
+            animatePastilleBetweenLinks(index);
+        }
+    });
+});
+
+
 function setPastilleToHome() {
     if (animationInProgress) return;
 
@@ -82,21 +154,9 @@ function animatePastilleBetweenLinks(newIndex) {
     });
 }
 
-
 homeLink.addEventListener('click', e => {
     e.preventDefault();
     if (activeIndex !== -1) setPastilleToHome();
-});
-
-items.forEach((item, index) => {
-    item.addEventListener('click', e => {
-        e.preventDefault();
-        if (activeIndex === index) {
-            setPastilleToHome();
-        } else {
-            animatePastilleBetweenLinks(index);
-        }
-    });
 });
 
 window.addEventListener('load', () => {
@@ -109,4 +169,3 @@ window.addEventListener('resize', () => {
         items[activeIndex].dispatchEvent(evt);
     }
 });
-

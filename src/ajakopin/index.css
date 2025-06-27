@@ -18,9 +18,14 @@
 @import url("./components/services.css");
 
 /* *** Normalize CSS *** */
+html {
+    scroll-behavior: smooth;
+}
+
 .section {
     flex: 0 0 100%;
     max-width: 100%;
+    scroll-margin-top: 80px;
 }
 
 body {
