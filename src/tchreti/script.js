@@ -1,14 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const container = document.querySelector('[data-scroll-container]');
-    if (container && typeof LocomotiveScroll !== "undefined") {
-        new LocomotiveScroll({
-            el: container,
-            smooth: true,
-            multiplier: 0.15,
-            lerp: 0.09
-        });
-    }
-
     const sections = document.querySelectorAll('.section');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, i) => {
@@ -63,5 +52,4 @@ document.addEventListener("DOMContentLoaded", function() {
                 openBurger.focus();
             }
         });
-    }
-});
+    };
