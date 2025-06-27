@@ -5,7 +5,7 @@ const items = document.querySelectorAll('.service-item');
 const viewportWidth = window.innerWidth;
 const containerScrollWidth = container.scrollWidth;
 const scrollableDistance = containerScrollWidth - viewportWidth;
-const scrollMultiplier = 1.5;
+const scrollMultiplier = 1.65;
 
 section.style.height = (scrollableDistance * scrollMultiplier + window.innerHeight) + 'px';
 
