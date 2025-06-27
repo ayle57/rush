@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-scroll-container>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
     <div class="bg-overlay"></div>
     <nav id="burgerMenu" class="burger-menu" tabindex="-1" aria-hidden="true">
         <button class="closebtn" id="closeBurger" aria-label="Fermer le menu">&times;</button>
@@ -20,7 +22,7 @@
     </nav>
     <header class="header">
         <a href="/" class="header__logo" aria-label="Accueil">
-            <img src="../../public/icons/logo.svg" alt="Logo Clément Morel" class="header__logo-image">
+            <img src="../../public/icons/house.svg" alt="Icone House" class="header__logo-image">
         </a>
         <button id="openBurger" class="burger-icon" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="burgerMenu">
             <span class="burger-bar"></span>
@@ -184,31 +186,33 @@
         <h2 class="section__title">Me contacter</h2>
         <div class="social-links">
             <a href="mailto:cmorel@student.42angouleme.fr">
-                <strong>Email</strong>
+                <p class="online">Email</p>
                 <span>cmorel@student.42angouleme.fr</span>
             </a>
             <a href="https://www.twitch.tv/xrayxv9" target="_blank" rel="noopener">
-                <strong>Twitch</strong>
+                <p class="online">Twitch</p>
                 <span>xrayxv9</span>
             </a>
             <a href="https://github.com/xrayxv9" target="_blank" rel="noopener">
-                <strong>Github</strong>
+                <p class="online">Github</p>
                 <span>xrayxv9</span>
             </a>
             <a>
-                <strong>OnlyFans</strong>
+                <p class="online">OnlyFans</p>
                 <span>[Confidentiel]</span>
             </a>
                 <a href="https://www.teamspeak.com">
-                <strong>TeamSpeak</strong>
+                <p class="online">TeamSpeak</p>
                 <span>[En cas de ban sur Paladium]</span>
+            </a>
+            <a>
+                <p class="online">Discord</p>
+                <span>xrayxv5_8171</span>
             </a>
         </div>
     </section>
   <footer class="footer">
         CV produit, imaginé, conçu, polis, réglementé par Timéo Chrétien, avec grand soin de bien taclé Clément (alias FuzeIII) — 2025
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
