@@ -51,7 +51,7 @@ body {
     min-height: 100vh;
     background: 
         linear-gradient(rgba(24, 18, 43, 1), rgba(24, 18, 43, 0.8)),
-        url('../../public/space-shape.png') no-repeat center center fixed;
+        url('../../public/icons/space-shape.png') no-repeat center center fixed;
     background-size: cover;
     color: var(--color-yellow);
     font-family: 'Inter', 'HK Grotesk', Arial, sans-serif;

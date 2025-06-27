@@ -16,7 +16,7 @@ div.space-shape {
   height: 100vh;
   background:
     linear-gradient(rgba(31,34,53,0.7), rgba(31,34,53,0.7)),
-    url('public/space-shape.png') no-repeat center center;
+    url('public/icons/space-shape.png') no-repeat center center;
   background-size: cover;
   color: #fff;
   position: relative;
