@@ -16,6 +16,10 @@
 @import url("./components/work.css");
 /* *** Services Component *** */
 @import url("./components/services.css");
+/* *** Contact Component *** */
+@import url("./components/contact.css");
+/* *** Footer Component *** */
+@import url("./components/footer.css");
 
 /* *** Normalize CSS *** */
 html {

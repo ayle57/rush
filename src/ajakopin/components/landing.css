@@ -43,10 +43,6 @@ section.section.landingSection div.landingSection-inner div.screen-container {
     border-radius: 35px;
 }
 
-body {
-    height: 1000vh;
-}
-
 section.section.landingSection div.landingSection-inner div.screen-container div.scroll-container {
     width: 100%;
     height: auto;
