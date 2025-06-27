@@ -4,12 +4,10 @@
 main.main-project {
     width: 100vw;
     height: 100vh;
-<<<<<<< HEAD
     display: flex;
     align-items: center;
     justify-content: center;
     background: #f7f7fb;
-=======
     max-height: 100vh;
 }
 
@@ -22,7 +20,6 @@ div.space-shape {
   background-size: cover;
   color: #fff;
   position: relative;
->>>>>>> e872d95 (Update)
 }
 
 div.main-project__inner {
@@ -165,7 +162,6 @@ iv.main-project__inner {
     }
 }
 
-/* Desktop: keep everything centered and fixed size */
 @media (min-width: 901px) {
     div.main-project__inner {
         justify-content: center;
