@@ -7,10 +7,10 @@ const linkUtil = document.querySelector(".link-util");
 
 linkLegal.addEventListener("click", (e) => {
     e.preventDefault();
-    alert("C'est legal")
+    alert("C'est légal")
 })
 
 linkUtil.addEventListener("click", (e) => {
     e.preventDefault();
-    alert("Pas besoin de condition d'utilisation, t'as juste a scroller pour utiliser le site")
+    alert("Pas besoin de condition d'utilisation, t'as juste à scroller pour utiliser le site")
 })
