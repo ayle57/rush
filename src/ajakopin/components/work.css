@@ -10,6 +10,13 @@ section.section.workSection div.workSection-inner div.workSection-grid {
     grid-row-gap: 2.5vh;
 }
 
+@media screen and (max-width: 630px) {
+    section.section.workSection div.workSection-inner div.workSection-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 section.section.workSection div.workSection-inner div.workSection-grid div.workSection-item {
     position: relative;
     width: 100%;
@@ -46,7 +53,7 @@ section.section.workSection div.workSection-inner div.workSection-grid div.workS
     display: inline-block;
     font-size: 22px;
     font-weight: 600;
-    color: var(--white-100);
+    color: var(--white-900);
     transform: translateY(-700%);
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }

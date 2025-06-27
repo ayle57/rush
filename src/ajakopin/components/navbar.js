@@ -1,6 +1,10 @@
 const navbarLinks = document.querySelector('ul.navbar-links');
 const items = navbarLinks.querySelectorAll('li');
 const homeLink = document.querySelector('a.navbar-brand');
+const burgerBtn = document.querySelector('a.navbar-burger');
+const cta = document.querySelector('div.navbar-cta');
+const navbarContainer = document.querySelector(".navbar-links");
+const burgerLinks = document.querySelector('ul.burger-links');
 
 let activeIndex = -1;
 let animationInProgress = false;
@@ -40,7 +44,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observer les vraies sections visibles
 sectionMap.forEach(section => {
     const el = section.id === 'services-trigger'
         ? document.querySelector('.servicesSection-trigger')
@@ -163,9 +166,30 @@ window.addEventListener('load', () => {
     setPastilleToHome();
 });
 
+function handleNavbarOnResize() {
+    if(window.innerWidth < 700) {
+        cta.style.display = "none";
+        burgerBtn.style.display = "flex";
+        navbarContainer.style.display = "none";
+    } else {
+        cta.style.display = "flex";
+        burgerBtn.style.display = "none";
+        navbarContainer.style.display = "flex";
+    }
+}
+
 window.addEventListener('resize', () => {
     if (activeIndex >= 0) {
         const evt = new Event('click');
         items[activeIndex].dispatchEvent(evt);
     }
+
+    handleNavbarOnResize()
+});
+
+handleNavbarOnResize()
+
+burgerBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    burgerLinks.classList.toggle('reveal')
 });

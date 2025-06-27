@@ -1,5 +1,3 @@
-// main.js (ou ton fichier JS principal)
-
 import TypeIt from "typeit";
 
 window.addEventListener('scroll', () => {
@@ -7,15 +5,11 @@ window.addEventListener('scroll', () => {
     const backImage = document.querySelector(".img-container-back");
     if (!container || !backImage) return;
 
-    const minPadding = 2.5;
-    const maxPadding = 7.5;
     const scrollY = window.scrollY;
     const maxScroll = window.innerHeight;
 
     const scrollRatio = Math.min(scrollY / maxScroll, 1);
 
-    const currentPadding = maxPadding - (maxPadding - minPadding) * scrollRatio;
-    container.style.padding = `${currentPadding}vh`;
 
     const base = 20;
     const newTop = base * scrollRatio;

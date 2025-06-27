@@ -198,3 +198,81 @@ nav.navbar div.navbar-cta a {
     cursor: pointer;
     text-decoration: none;
 }
+
+nav.navbar a.navbar-burger {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 5vw;
+    z-index: 5;
+    font-family: "Roboto Condensed", sans-serif;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+ul.burger-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 40px;
+    top: 70px;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    line-height: 1.8;
+    background-color: #fff;
+    border-radius: 25px;
+    visibility: hidden;
+    z-index: 5;
+}
+
+ul.burger-links li {
+    display: inline-block;
+    overflow: hidden;
+    visibility: visible;
+}
+
+ul.burger-links li a {
+    display: inline-block;
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--black-900);
+    transition: color 300ms, transform 300ms;
+    transform: translateY(-100%);
+}
+
+ul.burger-links.reveal {
+    visibility: visible;
+}
+
+ul.burger-links.reveal li a {
+    transform: translateY(0);
+    position: relative;
+    padding-left: 20px
+}
+
+ul.burger-links li a::before {
+    content: "(";
+    display: none;
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    color: var(--red);
+}
+
+ul.burger-links li a:hover {
+    color: var(--red);
+    cursor: pointer;
+}
+
+ul.burger-links li a:hover:before {
+    display: block;
+}

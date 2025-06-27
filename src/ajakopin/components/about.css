@@ -14,3 +14,10 @@ section.section.aboutSection div.aboutSection-inner div.aboutSection-container p
 section.section.aboutSection div.aboutSection-inner div.aboutSection-container a {
     margin-top: 10px;
 }
+
+@media screen and (max-width: 630px) {
+    section.section.aboutSection div.aboutSection-inner div.aboutSection-container p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
