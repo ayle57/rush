@@ -121,7 +121,7 @@ a.main-project__section small {
     margin: 0;
     letter-spacing: 1px;
 }
-iv.main-project__inner {
+div.main-project__inner {
     display: flex;
     align-items: center;
     justify-content: center;
