@@ -382,6 +382,10 @@ a:link {
     color: var(--color-bg-dark);
 }
 
+.social-links a:hover p.online {
+    color: var(--color-bg-dark);
+}
+
 @media (max-width: 900px) {
     .services,
     .projects,
