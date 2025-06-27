@@ -4,10 +4,25 @@
 main.main-project {
     width: 100vw;
     height: 100vh;
+<<<<<<< HEAD
     display: flex;
     align-items: center;
     justify-content: center;
     background: #f7f7fb;
+=======
+    max-height: 100vh;
+}
+
+div.space-shape {
+  min-height: 100vh;
+  height: 100vh;
+  background:
+    linear-gradient(rgba(31,34,53,0.7), rgba(31,34,53,0.7)),
+    url('public/space-shape.png') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+>>>>>>> e872d95 (Update)
 }
 
 div.main-project__inner {

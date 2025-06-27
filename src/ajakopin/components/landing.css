@@ -88,7 +88,7 @@ section.section.landingSection div.landingSection-inner div.screen-container div
 section.section.landingSection div.landingSection-inner div.screen-container div.scroll-container .img-container img {
     max-width: 90vw;
     max-height: 60vh;
-    width: 100&;
+    width: 100%;
     height: auto;
     border-radius: 35px;
 }
